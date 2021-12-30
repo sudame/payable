@@ -26,21 +26,42 @@ and the Flutter guide for
 
 ## Getting started
 
+### Installation
+
 ```shell
 # flutter
-flutter pub add 
+flutter pub add payable --git https://github.com/sudame/payable.git
+
+# dart
+dart pub add payable --git https://github.com/sudame/payable.git
 ```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples to `/example` folder.
-
 ```dart
+import 'package:payable/payable.dart';
 
-const like = 'sample';
+void main() async {
+  final payable = Payable();
+  final stores = await payable.getPayPayStores();
+
+  for (var store in stores) {
+    print(store.name);
+  }
+  // >>> will print >>>
+  // セイコーマート
+  // セブン‐イレブン
+  // デイリーヤマザキ
+  // ...
+}
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to contribute to the package, how to file
-issues, what response they can expect from the package authors, and more.
+### Store Structure
+```dart
+class Store {
+  final String name;
+}
+```
+今後属性は必要に応じて追加予定
