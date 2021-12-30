@@ -30,10 +30,10 @@ and the Flutter guide for
 
 ```shell
 # flutter
-flutter pub add payable --git https://github.com/sudame/payable.git
+flutter pub add payable --git-url https://github.com/sudame/payable.git
 
 # dart
-dart pub add payable --git https://github.com/sudame/payable.git
+dart pub add payable --git-url https://github.com/sudame/payable.git
 ```
 
 ## Usage
